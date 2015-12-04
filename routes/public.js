@@ -1,13 +1,23 @@
 module.exports = function(app, loggedIn) {
 
     app.get('/', function(req, res) {
-        res.render('index', { title: '9ostrd' });
+        res.render('index', { title: '9ostrd', list:[
+            {name:'ost',number:'3'},
+            {name:'ost',number:'4'}] });
     });
     
     app.get('/socketio', function(req, res) {
         res.render('socketio/socketio', { title: '9ostrd' });
     });
     
+
+    app.get('/anchan', function(req, res) {
+        res.render('user/test', { title: 'Anchan' });
+    });
+
+    app.get('/anchan2', function(req, res) {
+        res.render('new/new', { title: 'Anchan2' });
+    });
     // app.post('/api/rfid', function(req, res) {
     //     var rfid = JSON.parse(req.body.rfid);
     //     for(var i = 0; i <= (fakedatabase.length)-1;i++){
